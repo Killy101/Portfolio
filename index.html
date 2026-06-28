@@ -1,136 +1,811 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Creative Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="Assets/style.css">
-</head>
-<body>
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael James Labitad — Software Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Custom cursor -->
+    <div class="mjl-dot" id="mjl-dot"></div>
+    <div class="mjl-ring" id="mjl-ring"></div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <!-- NAV -->
     <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">Portfolio</div>
-            <ul>
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
+      <div class="nav-brand">MJL</div>
+      <ul class="nav-links" id="nav-links">
+        <li>
+          <a href="#about" class="nav-link" data-section="about">About</a>
+        </li>
+        <li>
+          <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+        </li>
+        <li>
+          <a href="#projects" class="nav-link" data-section="projects"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a href="#experience" class="nav-link" data-section="experience"
+            >Experience</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </li>
+      </ul>
+      <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+        Light
+      </button>
     </nav>
 
-    <section id="home">
-        <div class="container">
-            <div class="home-inner">
-                <div class="home-content">
-                    <h1>Hi, I'm a Developer</h1>
-                    <a href="#projects" class="btn">View My Work</a>
-                </div>
-                <div class="home-image">
-                    <img src="Assets/profile.jpg" alt="Portrait of a person">
-                </div>
-            </div>
+    <!-- HERO -->
+    <section id="hero">
+      <div class="dot-grid" aria-hidden="true"></div>
+      <div class="hero-left">
+        <p class="hero-eyebrow">
+          <span class="eyebrow-line"></span>
+          BSIT · Major in Programming · Software Developer
+        </p>
+        <h1 class="hero-name">
+          Michael<br />
+          <em class="hero-name-em">James</em><br />
+          Labitad
+        </h1>
+        <div class="hero-scroll-indicator" aria-hidden="true">
+          <div class="scroll-line"><div class="scroll-fill"></div></div>
+          Scroll
         </div>
+      </div>
+      <div class="hero-right">
+        <p class="hero-desc">
+          Building precise, purposeful software — from document processing tools
+          to rental platforms. Based in Cebu, Philippines.
+        </p>
+        <!-- Terminal -->
+        <div class="terminal" aria-label="Terminal showing current role info">
+          <div class="terminal-bar">
+            <span class="tb-dot tb-red"></span>
+            <span class="tb-dot tb-yellow"></span>
+            <span class="tb-dot tb-green"></span>
+            <span class="terminal-title">mjl@portfolio ~ zsh</span>
+          </div>
+          <div class="terminal-body">
+            <div class="term-line tl-1">
+              <span class="term-prompt">❯</span
+              ><span class="term-cmd">whoami</span>
+            </div>
+            <div class="term-line tl-2 term-out">michael james labitad</div>
+            <div class="term-line tl-3">
+              <span class="term-prompt">❯</span
+              ><span class="term-cmd">cat current.json</span>
+            </div>
+            <div class="term-line tl-4 term-json">
+              <div class="tj-brace">{</div>
+              <div class="tj-row">
+                <span class="tj-key">"role"</span
+                ><span class="tj-colon">: </span
+                ><span class="tj-val">"Software Dev Intern"</span
+                ><span class="tj-colon">,</span>
+              </div>
+              <div class="tj-row">
+                <span class="tj-key">"company"</span
+                ><span class="tj-colon">: </span
+                ><span class="tj-val">"Innodata · Mandaue"</span
+                ><span class="tj-colon">,</span>
+              </div>
+              <div class="tj-row">
+                <span class="tj-key">"project"</span
+                ><span class="tj-colon">: </span
+                ><span class="tj-val">"Document Intelligence"</span
+                ><span class="tj-colon">,</span>
+              </div>
+              <div class="tj-row">
+                <span class="tj-key">"stack"</span
+                ><span class="tj-colon">: [</span
+                ><span class="tj-val">"Next.js"</span
+                ><span class="tj-colon">, </span
+                ><span class="tj-val">"Python"</span
+                ><span class="tj-colon">, </span
+                ><span class="tj-val">"AWS"</span
+                ><span class="tj-colon">]</span>
+              </div>
+              <div class="tj-brace">}</div>
+            </div>
+            <div class="term-line tl-5">
+              <span class="term-prompt">❯</span
+              ><span class="term-cursor"></span>
+            </div>
+          </div>
+        </div>
+        <!-- CTAs -->
+        <div class="hero-ctas">
+          <a href="#projects" class="btn-primary">View Projects ↓</a>
+          <a href="#contact" class="btn-ghost">Get in Touch →</a>
+        </div>
+        <!-- Meta -->
+        <div class="hero-meta">
+          <span class="status-pill"
+            ><span class="pulse-dot"></span>Open to opportunities</span
+          >
+          <span class="hero-location">Cebu City, PH</span>
+        </div>
+      </div>
     </section>
 
+    <hr class="section-divider" />
+
+    <!-- ABOUT -->
     <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a passionate developer specializing in building modern, responsive websites and applications. As a self-learner, I enjoy continuously acquiring new skills and exploring different domains within technology and software development.</p>
-                    <p>My goal is to contribute my skills to the industry while gaining valuable hands-on experience and continuing to grow as a developer.</p>
-                </div>
-                <div class="skills-section">
-                    <h3>Technical Skills</h3>
-                    <div class="skills">
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">Git/Github</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Vercel</span>
-                        <span class="skill-tag">MySQL/NoSQL</span>
-                    </div>
-                </div>
+      <p class="section-label reveal rd1">
+        About<span class="label-line"></span>
+      </p>
+      <div class="about-grid">
+        <div class="about-photo-col reveal rd2">
+          <div class="photo-wrap">
+            <img
+              src="Assets/profile.jpg"
+              alt="Michael James Labitad"
+              class="profile-img"
+              id="profile-img"
+            />
+            <div class="photo-badge">
+              <span class="pulse-dot"></span>Available for work
             </div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-num" data-stat="3" data-suffix="+">0+</span>
+              <span class="stat-label">Years coding</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-stat="4" data-suffix="+">0+</span>
+              <span class="stat-label">Projects shipped</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-stat="7" data-suffix="+">0+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-stat="2" data-suffix="">0</span>
+              <span class="stat-label">Awards</span>
+            </div>
+          </div>
         </div>
+        <div class="about-text-col reveal rd3">
+          <h2 class="about-headline">
+            Turning ideas into<br /><em class="accent-italic"
+              >working software.</em
+            >
+          </h2>
+          <div class="about-body">
+            <p>
+              I'm an IT student and software developer with hands-on internship
+              experience building full-stack web applications at enterprise
+              scale. Currently interning at Innodata Knowledge Services, where I
+              work on document processing pipelines using Next.js and Python.
+            </p>
+            <p>
+              I led the development of RENT2REUSE, a full-stack capstone project
+              — from architecture to deployment on Vercel. I care about clean
+              code, thoughtful UX, and shipping things that actually work.
+            </p>
+            <p>
+              Self-directed learner, team lead, and creative problem-solver who
+              performs well under pressure.
+            </p>
+          </div>
+          <ul class="about-facts">
+            <li>
+              <span class="fact-dot accent"></span>Software Developer Intern @
+              Innodata Knowledge Services
+            </li>
+            <li>
+              <span class="fact-dot accent"></span>Capstone Lead — RENT2REUSE
+              (Vercel deployed)
+            </li>
+            <li>
+              <span class="fact-dot accent"></span>Multimedia Lead — Google
+              Developer Student Clubs CTU
+            </li>
+            <li>
+              <span class="fact-dot blue"></span
+              ><a
+                href="https://github.com/Killy101"
+                target="_blank"
+                rel="noopener"
+                class="link-blue"
+                >github.com/Killy101 ↗</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
+    <hr class="section-divider" />
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <p class="section-label reveal rd1">
+        Technical Skills<span class="label-line"></span>
+      </p>
+      <div class="skills-layout">
+        <div class="skills-intro reveal rd2">
+          <h2 class="skills-headline">Tools I build with.</h2>
+          <p class="skills-sub">
+            Full-stack oriented, with depth in JavaScript ecosystems and
+            Python-based document processing.
+          </p>
+          <div class="learning-badge">
+            <span class="pulse-dot blue-dot"></span>
+            <span class="learning-text">Currently: Docker · CI/CD</span>
+          </div>
+        </div>
+        <div class="skills-cards reveal rd3">
+          <div class="skill-card">
+            <p class="skill-card-title">Frontend</p>
+            <div class="skill-rows">
+              <div class="skill-row">
+                <span>HTML &amp; CSS</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>JavaScript</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>React</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>Next.js</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>Tailwind CSS</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot empty"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>React Native</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot empty"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <p class="skill-card-title">Backend &amp; Data</p>
+            <div class="skill-rows">
+              <div class="skill-row">
+                <span>Node.js</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot empty"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>Python</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot empty"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>C# / ASP.NET</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot empty"></span
+                  ><span class="dot empty"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>PostgreSQL</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot empty"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>MySQL</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot empty"></span
+                  ><span class="dot empty"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>Firebase</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot empty"></span
+                  ><span class="dot empty"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <p class="skill-card-title">Tools &amp; Platforms</p>
+            <div class="skill-rows">
+              <div class="skill-row">
+                <span>Git / GitHub</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>Vercel</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot empty"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>AWS (EC2, S3)</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot empty"></span
+                  ><span class="dot empty"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>Figma</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot empty"></span
+                  ><span class="dot empty"></span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <span>Trello / MS 365</span>
+                <div class="dots">
+                  <span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot filled"></span
+                  ><span class="dot empty"></span
+                  ><span class="dot empty"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- PROJECTS -->
     <section id="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-number">01</div>
-                    <h3>RENT2REUSE</h3>
-                    <p>A web and mobile-based platform for tools rental with AI Integration</p>
-                    <p>A platform for an administrative system</p>
-                    <a href="https://admin-rent2reuse-website.vercel.app" target="_blank" class="project-link">View Project</a>
-                    <div class="project-tech">Express • Next.js • Firebase</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">02</div>
-                    <h3>E -Wallet System</h3>
-                    <p>Built an e-wallet system with ASP.NET as part of our final project.</p>
-                    <div class="project-tech">ASP.Net • Firebase</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">03</div>
-                    <h3>Portfolio Website</h3>
-                    <p>Modern portfolio showcase with smooth animations and interactive elements.</p>
-                    <div class="project-tech">HTML • CSS • JavaScript</div>
-                </div>
-            </div>
+      <p class="section-label reveal rd1">
+        Projects<span class="label-line"></span>
+      </p>
+      <div class="projects-header reveal rd2">
+        <h2 class="projects-headline">Selected Work</h2>
+        <span class="projects-count">04 Projects</span>
+      </div>
+
+      <!-- Featured -->
+      <div class="featured-project reveal rd3">
+        <div class="featured-meta">
+          <span class="featured-badge">Featured</span>
+          <span>01 / Capstone Project</span>
         </div>
+        <div class="featured-body">
+          <div class="featured-info">
+            <h3 class="featured-title">RENT2REUSE</h3>
+            <p class="featured-role">
+              Full-Stack Developer &amp; Capstone Lead
+            </p>
+            <p class="featured-desc">
+              A full-stack tools and equipment rental platform built as a
+              capstone project, deployed on Vercel. Covers the full rental
+              lifecycle from listing to booking confirmation.
+            </p>
+            <ul class="featured-list">
+              <li>
+                <span class="list-dot">·</span>Real-time availability calendar
+                with booking conflict detection
+              </li>
+              <li>
+                <span class="list-dot">·</span>Secure user auth and role-based
+                access control
+              </li>
+              <li>
+                <span class="list-dot">·</span>Companion React Native mobile app
+                for renters
+              </li>
+              <li>
+                <span class="list-dot">·</span>Admin dashboard with analytics
+                and inventory management
+              </li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Vercel</span>
+            </div>
+          </div>
+          <div class="featured-img-col">
+            <img
+              src="Assets/rent2reuse-dashboard.png"
+              alt="RENT2REUSE dashboard"
+              class="project-real-img"
+              id="rent2-img"
+            />
+            <div class="img-tags">
+              <span class="tech-tag">Live on Vercel</span>
+              <span class="tech-tag">Full-Stack</span>
+            </div>
+            <a
+              href="https://admin-rent2reuse-website.vercel.app"
+              target="_blank"
+              rel="noopener"
+              class="project-cta"
+              >View Live ↗</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary grid -->
+      <div class="secondary-grid">
+        <div class="proj-card reveal rd3">
+          <div class="proj-card-header">
+            <p class="proj-num">02</p>
+            <span class="proj-badge intern">Internship</span>
+          </div>
+          <img
+            src="Assets/structo-dashboard.png"
+            alt="Structo document pipeline"
+            class="project-real-img sm"
+            id="structo-img"
+          />
+          <h3 class="proj-title">Structo — DocuProcess</h3>
+          <p class="proj-desc">
+            Enterprise document processing system built at Innodata. Handles
+            large-scale ingestion, transformation, and structured INNOD.XML
+            extraction using Next.js and Python.
+          </p>
+          <div class="tech-tags mt-auto">
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">AWS</span>
+          </div>
+        </div>
+        <div class="proj-card reveal rd4">
+          <div class="proj-card-header">
+            <p class="proj-num">03</p>
+          </div>
+          <div
+            class="proj-img-placeholder sm green"
+            aria-label="Pawgenic mobile app"
+          >
+            <div class="placeholder-text">PW</div>
+            <div class="placeholder-sub">Mobile App</div>
+          </div>
+          <h3 class="proj-title">Pawgenic</h3>
+          <p class="proj-desc">
+            Dog breeding app with AI integration for breed analysis, matching,
+            and lineage tracking. Focused on clean UX for a niche but passionate
+            user base.
+          </p>
+          <div class="tech-tags mt-auto">
+            <span class="tech-tag">React Native</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">AI/ML</span>
+          </div>
+        </div>
+        <div class="proj-card reveal rd5">
+          <div class="proj-card-header">
+            <p class="proj-num">04</p>
+          </div>
+          <div
+            class="proj-img-placeholder sm blue"
+            aria-label="E-Wallet system"
+          >
+            <div class="placeholder-text">EW</div>
+            <div class="placeholder-sub">Web App</div>
+          </div>
+          <h3 class="proj-title">E-Wallet System</h3>
+          <p class="proj-desc">
+            Functional e-wallet covering user authentication, transaction
+            handling, and balance management. Academic project demonstrating
+            backend architecture and security practices.
+          </p>
+          <div class="tech-tags mt-auto">
+            <span class="tech-tag">ASP.NET</span>
+            <span class="tech-tag">C#</span>
+            <span class="tech-tag">Firebase</span>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <hr class="section-divider" />
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <p class="section-label reveal rd1">
+        Experience &amp; Achievements<span class="label-line"></span>
+      </p>
+      <div class="exp-grid">
+        <div class="reveal rd2">
+          <h3 class="exp-col-title">Work Experience</h3>
+          <div class="exp-entry">
+            <div class="exp-entry-head">
+              <span class="exp-role">Software Developer Intern</span>
+              <span class="exp-date">Feb 2026 – Present</span>
+            </div>
+            <p class="exp-company blue">
+              Innodata Knowledge Services · Mandaue City, Cebu
+            </p>
+            <p class="exp-desc">
+              Built enterprise document processing tools using Next.js and
+              Python. Managed relational data with PostgreSQL and handled AWS
+              cloud deployments in a fast-paced production environment.
+            </p>
+            <div class="current-pill">
+              <span class="pulse-dot"></span>Current role
+            </div>
+          </div>
+          <div class="exp-entry">
+            <div class="exp-entry-head">
+              <span class="exp-role"
+                >Full-Stack Developer &amp; Capstone Lead</span
+              >
+              <span class="exp-date">2023 – 2024</span>
+            </div>
+            <p class="exp-company">
+              RENT2REUSE · Cebu Technological University
+            </p>
+            <p class="exp-desc">
+              Led a team to build and deploy a full-stack tools rental platform.
+              Co-authored the companion mobile app and managed the entire
+              production deployment pipeline.
+            </p>
+          </div>
+          <div class="exp-entry last">
+            <div class="exp-entry-head">
+              <span class="exp-role">Multimedia Lead</span>
+              <span class="exp-date">2022 – 2023</span>
+            </div>
+            <p class="exp-company">Google Developer Student Clubs – CTU</p>
+            <p class="exp-desc">
+              Led creative production of graphics, videos, and presentations for
+              club events and community outreach.
+            </p>
+          </div>
+        </div>
+        <div class="reveal rd3">
+          <h3 class="exp-col-title">Education &amp; Achievements</h3>
+          <div class="exp-entry">
+            <div class="exp-entry-head">
+              <span class="exp-role"
+                >BS Information Technology — Major in Programming</span
+              >
+              <span class="exp-date">2020 – Present</span>
+            </div>
+            <p class="exp-company">
+              Cebu Technological University – Main Campus
+            </p>
+            <p class="exp-desc">
+              Major in Programming. Focused on full-stack development, systems
+              design, and software engineering. Actively involved in technical
+              student organizations.
+            </p>
+          </div>
+          <div class="exp-entry">
+            <div class="exp-entry-head">
+              <span class="exp-role">Innovation Competition Winner</span>
+              <span class="exp-date">2023</span>
+            </div>
+            <p class="exp-company">University-level Academic Competition</p>
+            <p class="exp-desc">
+              Awarded for innovative project concept and technical execution in
+              a university-level competition.
+            </p>
+            <span class="award-badge">★ Award Winner</span>
+          </div>
+          <div class="exp-entry last">
+            <div class="exp-entry-head">
+              <span class="exp-role">Video / Multimedia Contest Winner</span>
+              <span class="exp-date">2022</span>
+            </div>
+            <p class="exp-company">University-level Academic Competition</p>
+            <p class="exp-desc">
+              Recognized for creative direction and storytelling in multimedia
+              production.
+            </p>
+            <span class="award-badge">★ Award Winner</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- CONTACT -->
     <section id="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="contact-subtitle">I'd love to hear from you. Reach out through any of these channels.</p>
-            <div class="contact-info">
-                <div class="contact-methods">
-                    <a href="mailto:michaeljameslabitad018@gmail.com" class="contact-link email">
-                        <div class="contact-icon-box">
-                            <span class="icon">Gmail✉️</span>
-                        </div>
-                        <div class="contact-details">
-                           
-                            <span class="contact-value">michaeljameslabitad018@gmail.com</span>
-                        </div>
-                    </a>
-                    <a href="https://www.facebook.com/search/top?q=Michael%20James%20Alabitad" target="_blank" rel="noopener" class="contact-link facebook">
-                        <div class="contact-icon-box">
-                            <span class="icon">Facebook</span>
-                        </div>
-                        <div class="contact-details">
-                           
-                            <span class="contact-value">Michael James Alabitad</span>
-                        </div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/michael-james-labitad/" target="_blank" rel="noopener" class="contact-link linkedin">
-                        <div class="contact-icon-box">
-                            <span class="icon">LinkedIn</span>
-                        </div>
-                        <div class="contact-details">
-                          
-                            <span class="contact-value">Michael James Labitad</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
+      <p class="section-label reveal rd1">
+        Contact<span class="label-line"></span>
+      </p>
+      <div class="contact-grid">
+        <div class="reveal rd2">
+          <h2 class="contact-headline">
+            Let's build something<br /><em class="accent-italic">together.</em>
+          </h2>
+          <p class="contact-sub">
+            Open to full-time roles, freelance projects, and interesting
+            collaborations. Based in Cebu but works remotely.
+          </p>
+          <div class="contact-links">
+            <a
+              href="mailto:michaeljameslabitad018@gmail.com"
+              class="contact-link-row"
+            >
+              <span class="clr-label">Email</span>
+              <span class="clr-value">michaeljameslabitad018@gmail.com ↗</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/michael-james-labitad/"
+              target="_blank"
+              rel="noopener"
+              class="contact-link-row"
+            >
+              <span class="clr-label">LinkedIn</span>
+              <span class="clr-value">michael-james-labitad ↗</span>
+            </a>
+            <a
+              href="https://github.com/Killy101"
+              target="_blank"
+              rel="noopener"
+              class="contact-link-row"
+            >
+              <span class="clr-label">GitHub</span>
+              <span class="clr-value">Killy101 ↗</span>
+            </a>
+            <a
+              href="https://www.facebook.com/search/top?q=Michael%20James%20Alabitad"
+              target="_blank"
+              rel="noopener"
+              class="contact-link-row"
+            >
+              <span class="clr-label">Facebook</span>
+              <span class="clr-value">Michael James Alabitad ↗</span>
+            </a>
+          </div>
         </div>
+        <div class="reveal rd3">
+          <div class="contact-form-group">
+            <label for="c-name" class="form-label">Name</label>
+            <input
+              id="c-name"
+              type="text"
+              placeholder="Your name"
+              class="form-input"
+            />
+          </div>
+          <div class="contact-form-group">
+            <label for="c-email" class="form-label">Email</label>
+            <input
+              id="c-email"
+              type="email"
+              placeholder="your@email.com"
+              class="form-input"
+            />
+          </div>
+          <div class="contact-form-group">
+            <label for="c-msg" class="form-label">Message</label>
+            <textarea
+              id="c-msg"
+              placeholder="Tell me about your project or opportunity..."
+              class="form-textarea"
+            ></textarea>
+          </div>
+          <button id="send-btn" class="send-btn">Send Message →</button>
+        </div>
+      </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Portfolio. All rights reserved.</p>
+      <div class="footer-inner">
+        <p class="footer-copy">
+          © 2026 Michael James Labitad. All rights reserved.
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/Killy101" target="_blank" rel="noopener"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/michael-james-labitad/"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          <a
+            href="https://portfolio-labitad.vercel.app"
+            target="_blank"
+            rel="noopener"
+            >Portfolio</a
+          >
         </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
-
